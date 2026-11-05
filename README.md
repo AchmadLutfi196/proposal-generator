@@ -151,3 +151,19 @@ Detail bundle:
 Prasyarat (Linux): `sudo apt install pandoc libreoffice poppler-utils imagemagick python3-yaml` (Windows: WSL2 direkomendasikan).
 
 Setelah skill terpasang, cukup bilang ke agent: *"buatkan proposal dari topik X"* — agent akan menjalankan pipeline lengkap (scaffold → isi bab → anti-slop → kompilasi → audit) sampai lulus.
+
+### Kenapa upload zip repo langsung error "Zip cannot contain nested zip files"?
+
+Kalau kamu download repo dari GitHub (Code → Download ZIP), isinya adalah **zip repo yang sudah berisi `dist/proposal-generator-skill.zip`** di dalamnya. Claude.ai menolak nested zip → error itu expected.
+
+Solusi: **jangan upload zip repo**. Upload file skill-nya saja:
+
+```bash
+# Ambil file skill zip yang benar (SKILL.md di akar, tanpa nested zip):
+# dist/download/proposal-generator-skill-claude.zip
+# Atau build ulang dari folder dist/proposal-generator-skill/:
+cd dist/proposal-generator-skill
+zip -r ../proposal-generator-skill-claude.zip SKILL.md README.md scripts references templates
+```
+
+Lalu di Claude.ai: Settings → Skills → upload **`proposal-generator-skill-claude.zip`** (SKILL.md harus di akar zip).
