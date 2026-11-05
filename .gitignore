@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Build artifacts
+output/
+tmp/
+*.tmp
+*.log
+
+# Ignore generated Word/PDF documents except reference template
+*.docx
+!templates/reference.docx
+*.pdf
+
+# Operating System & IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*~

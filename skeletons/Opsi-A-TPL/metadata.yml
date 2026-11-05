@@ -1,0 +1,33 @@
+---
+title: "PENGEMBANGAN SISTEM PENILAIAN ESAI MULTI-RATER OTOMATIS MENGGUNAKAN INDOBERT PADA UJIAN SEKOLAH"
+author_name: "ACHMAD MAHASISWA"
+author_nim: "210411100099"
+advisor_1_name: "Dr. Dosen Pembimbing Pertama, M.Kom."
+advisor_1_nip: "198001012005011001"
+advisor_2_name: "Dosen Pembimbing Kedua, S.Kom., M.T."
+advisor_2_nip: "198502022010012002"
+study_program: "PROGRAM STUDI TEKNIK INFORMATIKA"
+department: "JURUSAN TEKNIK INFORMATIKA"
+faculty: "FAKULTAS TEKNIK"
+institution: "UNIVERSITAS TRUNOJOYO MADURA"
+city: "BANGKALAN"
+year: "2026"
+
+abstract_id: |
+  Penilaian esai secara manual oleh pengajar sering menghadapi kendala subjektivitas, variabilitas antar-penilai, dan keterbatasan waktu pemeriksaan pada volume jawaban yang besar. Penelitian ini bertujuan mengembangkan sistem penilaian esai otomatis menggunakan model IndoBERT dengan arsitektur multi-rater untuk menghasilkan rekomendasi skor yang objektif dan transparan. Model ekstraksi representasi semantik memanfaatkan pretrained indobenchmark/indobert-base-p2 yang dikombinasikan dengan teknik mean pooling dan penghitungan kemiripan semantik cosine similarity antara jawaban siswa dan kunci jawaban acuan. Sistem mengintegrasikan pencatatan multi-penilai untuk menjaga akuntabilitas penilaian guru. Evaluasi model dilakukan menggunakan metrik Quadratic Weighted Kappa, Root Mean Square Error, dan Mean Absolute Error terhadap skor acuan pengajar. Pengujian fungsionalitas sistem informasi dilakukan melalui black box testing pada modul manajemen penugasan, pembobotan, dan rekapitulasi penilaian. Luaran penelitian berupa platform perangkat lunak pendukung asesmen pendidikan beserta dokumentasi performa akurasi sistem penilaian esai otomatis.
+
+keywords_id:
+  - Penilaian Esai Otomatis
+  - IndoBERT
+  - Multi-Rater
+  - Cosine Similarity
+
+abstract_en: |
+  Manual essay grading frequently suffers from evaluator subjectivity, inter-rater variability, and time constraints when handling substantial volumes of student submissions. This research aims to develop an automated essay scoring system leveraging the IndoBERT language model within a multi-rater architecture to deliver objective and transparent score recommendations. The semantic representation pipeline utilizes the pretrained indobenchmark/indobert-base-p2 model paired with mean pooling and cosine similarity between student responses and reference answer keys. The platform incorporates multi-teacher scoring records to uphold assessment accountability. Experimental evaluation is conducted using Quadratic Weighted Kappa, Root Mean Square Error, and Mean Absolute Error against verified teacher benchmark scores. Functional compliance is evaluated via black box testing across assignment configuration, scoring, and mark aggregation modules. Expected outcomes comprise an educational assessment software platform alongside comprehensive performance benchmarks.
+
+keywords_en:
+  - Automated Essay Scoring
+  - IndoBERT
+  - Multi-Rater
+  - Cosine Similarity
+...

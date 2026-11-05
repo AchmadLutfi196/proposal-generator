@@ -1,0 +1,44 @@
+# Preset Standar Akademik Indonesia
+preset_id: "standard"
+name: "Standar Proposal Skripsi Akademik Indonesia"
+description: "Format Standar Umum: A4, Margin 4-3-3-3 cm, Times New Roman 12pt, Spasi 1.5."
+
+paper_size: "A4"
+margin_top: 3cm
+margin_bottom: 3cm
+margin_left: 4cm
+margin_right: 3cm
+
+font_family: "Times New Roman"
+font_size: 12pt
+title_font_size: 14pt
+line_spacing: 1.5
+line_spacing_abstract: 1.0
+line_spacing_table: 1.0
+line_spacing_caption: 1.0
+first_line_indent: 1.25cm
+
+heading_chapter_prefix: "BAB "
+heading_chapter_num_format: "roman"
+heading_sub_dot: false
+heading_subsub_dot: false
+max_heading_depth: 3
+
+cover_logo_width: 4cm
+cover_title_shape: "inverted_pyramid"
+cover_title_min_words: 8
+cover_title_max_words: 16
+cover_show_lecturer: true
+
+front_numbering: "lowerRoman"
+front_hide_first: true
+body_numbering: "arabic"
+body_chapter_first_pos: "bottom-center"
+body_continuous_pos: "top-right"
+
+citation_style: "apa-numeric"
+csl_file: "apa-numeric.csl"
+min_journal_proceeding: 5
+max_journal_age_years: 5
+min_textbook: 5
+max_textbook_age_years: 20

@@ -1,0 +1,372 @@
+# Definisi Aturan Ceklist Seminar Proposal Teknik Informatika (TIF) FT UTM v06
+# Digunakan oleh script verifikasi otomatis (scripts/check_proposal.py)
+checklist_id: "ft-utm-tif-v06"
+title: "DAFTAR CEK SEMINAR PROPOSAL TEKNIK INFORMATIKA (TIF) UNIVERSITAS TRUNODJOYO MADURA"
+version: "v06"
+
+rules:
+  # =========================================================================
+  # 1. PRASYARAT & ADMINISTRASI AKADEMIK
+  # =========================================================================
+  - id: "ADM-01"
+    section: "Seminar Proposal"
+    item: "Lulus Mata Kuliah minimal 120 sks."
+    type: "manual"
+    severity: "mandatory"
+    check: "manual_confirmation"
+
+  - id: "ADM-02"
+    section: "Seminar Proposal"
+    item: "Sudah lulus Mata Kuliah Kerja Praktek."
+    type: "manual"
+    severity: "mandatory"
+    check: "manual_confirmation"
+
+  - id: "ADM-03"
+    section: "Seminar Proposal"
+    item: "Referensi bersumber dari jurnal/prosiding (min 5, max 5 th terakhir) dan textbook (min 5, max 20 th terakhir)."
+    type: "automated"
+    severity: "mandatory"
+    check: "bibliography_composition"
+    params:
+      min_journal_proceeding: 5
+      max_journal_age_years: 5
+      min_textbook: 5
+      max_textbook_age_years: 20
+
+  - id: "ADM-04"
+    section: "Seminar Proposal"
+    item: "Kelayakan/kedalaman topik skripsi sesuai dengan Standar Bidang Minat."
+    type: "manual"
+    severity: "mandatory"
+    check: "manual_confirmation"
+
+  - id: "ADM-05"
+    section: "Seminar Proposal"
+    item: "Perkiraan waktu penelitian tidak lebih dari 2 semester."
+    type: "manual"
+    severity: "mandatory"
+    check: "manual_confirmation"
+
+  - id: "ADM-06"
+    section: "Seminar Proposal"
+    item: "Menunjukkan rencana kerja proses penulisan skripsi (Jadwal Kegiatan)."
+    type: "automated"
+    severity: "mandatory"
+    check: "has_schedule_table"
+
+  - id: "ADM-07"
+    section: "Seminar Proposal"
+    item: "Melakukan pengajuan dosen pembimbing pada SISRI."
+    type: "manual"
+    severity: "mandatory"
+    check: "manual_confirmation"
+
+  - id: "ADM-08"
+    section: "Seminar Proposal"
+    item: "Melakukan minimal 2 kali konsultasi proposal dibuktikan dengan Logbook Skripsi."
+    type: "manual"
+    severity: "mandatory"
+    check: "manual_confirmation"
+
+  - id: "ADM-09"
+    section: "Seminar Proposal"
+    item: "Melakukan pengecekan plagiarisme dan penggunaan AI pada proposal."
+    type: "manual"
+    severity: "mandatory"
+    check: "manual_confirmation"
+
+  - id: "ADM-10"
+    section: "Seminar Proposal"
+    item: "Melakukan pendaftaran seminar proposal melalui SISRI."
+    type: "manual"
+    severity: "mandatory"
+    check: "manual_confirmation"
+
+  # =========================================================================
+  # 2. FORMAT PENGETIKAN & DOKUMEN FISIK
+  # =========================================================================
+  - id: "TYP-01"
+    section: "Format Pengetikan"
+    item: "Ukuran kertas A4 (21 cm x 29.7 cm)."
+    type: "automated"
+    severity: "mandatory"
+    check: "page_size_a4"
+    params:
+      width_cm: 21.0
+      height_cm: 29.7
+      tolerance_cm: 0.2
+
+  - id: "TYP-02"
+    section: "Format Pengetikan"
+    item: "Margins (Top = 3 cm, Left = 4 cm, Bottom = 3 cm, Right = 3 cm)."
+    type: "automated"
+    severity: "mandatory"
+    check: "page_margins"
+    params:
+      top_cm: 3.0
+      bottom_cm: 3.0
+      left_cm: 4.0
+      right_cm: 3.0
+      tolerance_cm: 0.15
+
+  - id: "TYP-03"
+    section: "Format Pengetikan"
+    item: "Jarak spasi 1.5 antar baris pada naskah utama."
+    type: "automated"
+    severity: "mandatory"
+    check: "line_spacing"
+    params:
+      expected_spacing: 1.5
+
+  - id: "TYP-04"
+    section: "Format Pengetikan"
+    item: "Font Times New Roman ukuran 12 (khusus judul ukuran 14 Bold)."
+    type: "automated"
+    severity: "mandatory"
+    check: "font_typography"
+    params:
+      primary_font: "Times New Roman"
+      body_size_pt: 12
+      title_size_pt: 14
+
+  # =========================================================================
+  # 3. PENOMORAN HALAMAN & HEADING
+  # =========================================================================
+  - id: "NUM-01"
+    section: "Format Penomoran"
+    item: "Penomoran halaman menggunakan format footer 'different first page'."
+    type: "automated"
+    severity: "mandatory"
+    check: "different_first_page_enabled"
+
+  - id: "NUM-02"
+    section: "Format Penomoran"
+    item: "Bagian awal menggunakan angka romawi kecil (i, ii, iii...) di bawah-tengah; cover tanpa nomor."
+    type: "automated"
+    severity: "mandatory"
+    check: "front_matter_roman_numbering"
+
+  - id: "NUM-03"
+    section: "Format Penomoran"
+    item: "Bagian inti menggunakan angka arab (1, 2, 3...). Halaman awal Bab di tengah bawah, lanjutan di kanan atas."
+    type: "automated"
+    severity: "mandatory"
+    check: "body_dual_pagination"
+
+  - id: "NUM-04"
+    section: "Format Penomoran"
+    item: "Penomoran subbab menggunakan angka (contoh: 2.1), sub-subbab maksimal 3 angka (contoh: 2.1.1) rata kiri."
+    type: "automated"
+    severity: "mandatory"
+    check: "heading_hierarchy_and_depth"
+    params:
+      max_depth: 3
+      sub_dot: false
+      subsub_dot: false
+
+  # =========================================================================
+  # 4. TABEL DAN GAMBAR
+  # =========================================================================
+  - id: "FIG-01"
+    section: "Tabel dan Gambar"
+    item: "Gambar dan tabel disajikan jelas / tidak kabur / buram."
+    type: "automated"
+    severity: "warning"
+    check: "image_resolution_dpi"
+    params:
+      min_dpi: 150
+
+  - id: "FIG-02"
+    section: "Tabel dan Gambar"
+    item: "Ukuran font isi tabel, keterangan tabel dan gambar ukuran 12, spasi tunggal 1.0."
+    type: "automated"
+    severity: "mandatory"
+    check: "caption_typography"
+
+  - id: "FIG-03"
+    section: "Tabel dan Gambar"
+    item: "Nomor tabel 2 bagian (contoh: Tabel 2.1) diletakkan di SEBELAH ATAS tabel."
+    type: "automated"
+    severity: "mandatory"
+    check: "table_caption_placement"
+
+  - id: "FIG-04"
+    section: "Tabel dan Gambar"
+    item: "Nomor gambar 2 bagian (contoh: Gambar 3.2) diletakkan di SEBELAH BAWAH gambar."
+    type: "automated"
+    severity: "mandatory"
+    check: "figure_caption_placement"
+
+  - id: "FIG-05"
+    section: "Tabel dan Gambar"
+    item: "Tabel atau gambar bukan dokumentasi pribadi wajib menyertakan baris Sumber."
+    type: "automated"
+    severity: "mandatory"
+    check: "figure_source_citation"
+
+  # =========================================================================
+  # 5. KUTIPAN & DAFTAR PUSTAKA
+  # =========================================================================
+  - id: "CIT-01"
+    section: "Kutipan"
+    item: "Kutipan dalam teks memakai nomor urut kemunculan dalam kurung siku, misal [3], [5–8]."
+    type: "automated"
+    severity: "mandatory"
+    check: "numeric_citation_brackets"
+
+  - id: "CIT-02"
+    section: "Kutipan"
+    item: "Daftar Pustaka menggunakan gaya penulisan APA disusun berdasarkan urutan kemunculan di naskah."
+    type: "automated"
+    severity: "mandatory"
+    check: "apa_numeric_bibliography"
+
+  - id: "CIT-03"
+    section: "Kutipan"
+    item: "Semua kutipan di teks terdaftar lengkap di Daftar Pustaka dan sebaliknya (two-way match)."
+    type: "automated"
+    severity: "mandatory"
+    check: "two_way_citation_match"
+
+  # =========================================================================
+  # 6. HALAMAN JUDUL
+  # =========================================================================
+  - id: "TTL-01"
+    section: "Halaman Judul"
+    item: "Judul proposal memuat 3 komponen: Objek, Tujuan, dan Metode/Algoritma/Pendekatan."
+    type: "automated"
+    severity: "mandatory"
+    check: "title_three_components"
+
+  - id: "TTL-02"
+    section: "Halaman Judul"
+    item: "Panjang judul proposal antara 8 sampai 12 kata."
+    type: "automated"
+    severity: "mandatory"
+    check: "title_word_count"
+    params:
+      min_words: 8
+      max_words: 12
+
+  - id: "TTL-03"
+    section: "Halaman Judul"
+    item: "Judul diketik seluruhnya dengan huruf besar/kapital tanpa singkatan."
+    type: "automated"
+    severity: "mandatory"
+    check: "title_uppercase_no_abbr"
+
+  - id: "TTL-04"
+    section: "Halaman Judul"
+    item: "Bentuk ketikan piramida terbalik (huruf V) atau sejajar."
+    type: "automated"
+    severity: "mandatory"
+    check: "title_v_shape"
+
+  - id: "TTL-05"
+    section: "Halaman Judul"
+    item: "Lambang Universitas Trunojoyo Madura pentagon ukuran diameter 4 cm."
+    type: "automated"
+    severity: "mandatory"
+    check: "cover_logo_size"
+    params:
+      target_cm: 4.0
+
+  - id: "TTL-06"
+    section: "Halaman Judul"
+    item: "Nama penulis lengkap tanpa singkatan, NPM di bawah nama."
+    type: "automated"
+    severity: "mandatory"
+    check: "author_info_format"
+
+  # =========================================================================
+  # 7. ABSTRAK
+  # =========================================================================
+  - id: "ABS-01"
+    section: "Abstrak"
+    item: "Abstrak berbentuk 1 paragraf ringkas berisi masalah, tujuan, metode."
+    type: "automated"
+    severity: "mandatory"
+    check: "abstract_single_paragraph"
+
+  - id: "ABS-02"
+    section: "Abstrak"
+    item: "Jumlah kata maksimal 200 kata, spasi tunggal 1.0, tanpa kutipan pustaka."
+    type: "automated"
+    severity: "mandatory"
+    check: "abstract_word_count_and_rules"
+    params:
+      max_words: 200
+
+  - id: "ABS-03"
+    section: "Abstrak"
+    item: "Kata kunci berjumlah 3 sampai 5 kata dan tertera di dalam naskah abstrak."
+    type: "automated"
+    severity: "mandatory"
+    check: "keywords_count_and_presence"
+    params:
+      min_keywords: 3
+      max_keywords: 5
+
+  # =========================================================================
+  # 8. BAB I PENDAHULUAN
+  # =========================================================================
+  - id: "CH1-01"
+    section: "BAB I Pendahuluan"
+    item: "Memiliki subbab: Latar Belakang, Rumusan Masalah, Tujuan dan Manfaat Penelitian, Batasan Masalah."
+    type: "automated"
+    severity: "mandatory"
+    check: "chapter1_required_subsections"
+
+  - id: "CH1-02"
+    section: "BAB I Pendahuluan"
+    item: "Latar Belakang minimal 1000 kata atau lebih dari lima kali abstrak."
+    type: "automated"
+    severity: "mandatory"
+    check: "background_word_count"
+    params:
+      min_words: 1000
+
+  - id: "CH1-03"
+    section: "BAB I Pendahuluan"
+    item: "Rumusan masalah dinyatakan dalam kalimat tanya dengan poin Masalah, Solusi, dan Pertanyaan Penelitian (5W+1H)."
+    type: "automated"
+    severity: "mandatory"
+    check: "problem_formulation_structure"
+
+  - id: "CH1-04"
+    section: "BAB I Pendahuluan"
+    item: "Penulisan rumusan masalah diuraikan menggunakan penomoran Number bukan Bullets."
+    type: "automated"
+    severity: "mandatory"
+    check: "problem_formulation_numbering"
+
+  # =========================================================================
+  # 9. BAB II TINJAUAN PUSTAKA
+  # =========================================================================
+  - id: "CH2-01"
+    section: "BAB II Tinjauan Pustaka"
+    item: "Memiliki subbab: Teori Dasar dan Penelitian Terdahulu."
+    type: "automated"
+    severity: "mandatory"
+    check: "chapter2_required_subsections"
+
+  - id: "CH2-02"
+    section: "BAB II Tinjauan Pustaka"
+    item: "Jumlah referensi Penelitian Terdahulu minimal 5 penelitian, tiap penelitian dijabarkan dalam 1 paragraf, total halaman >= 2 halaman."
+    type: "automated"
+    severity: "mandatory"
+    check: "prior_research_requirements"
+    params:
+      min_studies: 5
+      min_pages: 2.0
+
+  # =========================================================================
+  # 10. BAB III METODOLOGI PENELITIAN
+  # =========================================================================
+  - id: "CH3-01"
+    section: "BAB III Metodologi Penelitian"
+    item: "Memiliki subbab: Teknik Pengumpulan Data dan Metode/Alat yang digunakan (atau Alur Penelitian / Pemodelan sesuai opsi A/B)."
+    type: "automated"
+    severity: "mandatory"
+    check: "chapter3_required_subsections"

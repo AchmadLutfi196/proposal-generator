@@ -1,0 +1,58 @@
+# Preset Resmi: Proposal Skripsi Fakultas Teknik Universitas Trunojoyo Madura (FT UTM)
+# Sumber: 
+#   1. DAFTAR CEK SEMINAR PROPOSAL TEKNIK INFORMATIKA (TIF) v06
+#   2. BUKU PANDUAN PENULISAN SKRIPSI FT UTM Bab VI (§6.1–§6.11) & Bab VII Format Penulisan Proposal
+preset_id: "utm-proposal"
+name: "Universitas Trunojoyo Madura (Fakultas Teknik - Informatika)"
+description: "Format Standar Proposal Skripsi: A4 80g, Margin 4-3-3-3 cm, Times New Roman 12pt, Spasi 1.5, Nomor Romawi Awal Bawah-Tengah, Arab Inti (Awal Bab Bawah-Tengah, Lanjutan Kanan-Atas)."
+
+# 1. Geometri & Batas Halaman (§6.2.2 & Ceklist hal. 1)
+paper_size: "A4"
+margin_top: 3cm
+margin_bottom: 3cm
+margin_left: 4cm
+margin_right: 3cm
+
+# 2. Tipografi & Spasi (§6.2.1, §6.2.3 & Ceklist hal. 2)
+font_family: "Times New Roman"
+font_size: 12pt
+title_font_size: 14pt
+line_spacing: 1.5
+line_spacing_abstract: 1.0
+line_spacing_table: 1.0
+line_spacing_caption: 1.0
+first_line_indent: 1.25cm
+
+# 3. Penomoran Heading (§6.4.4-6 & Ceklist hal. 2)
+heading_chapter_prefix: "BAB "
+heading_chapter_num_format: "roman"
+heading_sub_dot: false         # "1.1" bukan "1.1."
+heading_subsub_dot: false      # "1.1.1" bukan "1.1.1."
+max_heading_depth: 3           # Maksimal 3 angka (misal: 2.2.2)
+
+# 4. Halaman Sampul / Judul (Ceklist hal. 4)
+cover_logo_width: 4cm
+cover_title_shape: "inverted_pyramid" # Bentuk piramida terbalik (V) atau sejajar
+cover_title_min_words: 8
+cover_title_max_words: 12
+cover_show_lecturer: true
+institution: "UNIVERSITAS TRUNOJOYO MADURA"
+faculty: "FAKULTAS TEKNIK"
+department: "JURUSAN TEKNIK INFORMATIKA"
+study_program: "PROGRAM STUDI TEKNIK INFORMATIKA"
+city: "BANGKALAN"
+
+# 5. Penomoran Halaman (Ceklist hal. 2 & Panduan §6.4)
+front_numbering: "lowerRoman"  # i, ii, iii... di bawah-tengah
+front_hide_first: true         # cover tanpa nomor halaman
+body_numbering: "arabic"       # 1, 2, 3...
+body_chapter_first_pos: "bottom-center"
+body_continuous_pos: "top-right"
+
+# 6. Sitasi & Daftar Pustaka (Ceklist hal. 3-4)
+citation_style: "apa-numeric"  # [1], [2-4] berurutan sesuai kemunculan
+csl_file: "apa-numeric.csl"
+min_journal_proceeding: 5
+max_journal_age_years: 5
+min_textbook: 5
+max_textbook_age_years: 20
