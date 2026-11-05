@@ -55,6 +55,29 @@ sudo apt install pandoc libreoffice poppler-utils imagemagick python3-yaml
 
 ---
 
+## Bidang Minat
+
+Framework ini menyediakan **4 Bidang Minat** sesuai dropdown *Pilih Bidang Minat* di Ceklist Seminar Proposal TIF v06 (ADM-04: *"Kelayakan/kedalaman topik skripsi sesuai dengan Standar Bidang Minat"*). Setiap bidang memiliki skeleton (kerangka contoh) tersendiri di `skeletons/` dan dipilih otomatis oleh `new_proposal.py` dari kata kunci topik — bisa juga dipilih manual lewat `--opsi KC|KBA|TPL|STD` (huruf kecil juga diterima; `--opsi A` = TPL lama, `--opsi B` = KC lama).
+
+| Kode | Bidang Minat | Contoh topik | Ciri khas naskah |
+|---|---|---|---|
+| **KC** | Kecerdasan Komputasional | Klasifikasi citra daun kopi dengan CNN | Pipeline ML/CNN, pemodelan data, evaluasi akurasi/presisi/recall/F1 |
+| **KBA** | Komputasi Bahasa Alami | Penilaian esai otomatis dengan IndoBERT | NLP/teks, ekstraksi semantik, evaluasi QWK/RMSE/MAE |
+| **TPL** | Teknologi Perangkat Lunak | Sistem informasi peminjaman laboratorium | Waterfall/Prototype, UML, black box testing |
+| **STD** | Sistem Terdistribusi | Penyeimbang beban API berbasis Round Robin | Load balancing/microservice/replikasi/failover, throughput/latensi/ketersediaan |
+
+Contoh pemilihan otomatis:
+
+```bash
+python3 scripts/new_proposal.py "Sistem Informasi Peminjaman Laboratorium Berbasis Web"          # -> TPL
+python3 scripts/new_proposal.py "Klasifikasi Citra Penyakit Daun Kopi dengan CNN"               # -> KC
+python3 scripts/new_proposal.py "Sistem Penilaian Esai Otomatis Menggunakan IndoBERT"           # -> KBA
+python3 scripts/new_proposal.py "Sistem Terdistribusi Penyeimbang Beban API Load Balancing"     # -> STD
+python3 scripts/new_proposal.py "Topik bebas apa pun" --opsi STD                                # manual
+```
+
+Bidang terpilih dicatat di `topik.yml` (`bidang_minat` + `opsi` + alasan) dan `PETUNJUK_AGENT.md` folder proyek.
+
 ## Panduan Cepat (Quickstart)
 
 ### 1. Gandakan Repositori
@@ -64,16 +87,22 @@ cd proposal-generator
 ```
 
 ### 2. Mulai Proyek Proposal Baru
-Pilih salah satu kerangka yang sesuai dengan topik Anda:
+Cara tercepat — satu perintah untuk topik apa pun (bidang dipilih otomatis), lihat bagian *Bidang Minat* di atas untuk contohnya:
 
 ```bash
-# Untuk topik AI / citra (KC):
-cp -r skeletons/KC-Kecerdasan-Komputasi proposal-saya
-cd proposal-saya
+python3 scripts/new_proposal.py "<satu topik bebas>" --nama "<Nama Mahasiswa>" --nim "<NIM>"
+cd <folder-proyek>
+```
 
-# Untuk topik NLP (KBA):  cp -r skeletons/KBA-Komputasi-Bahasa-Alami proposal-saya
-# Untuk topik SI / web (TPL):  cp -r skeletons/TPL-Teknologi-Perangkat-Lunak proposal-saya
-# Untuk topik sistem terdistribusi (STD):  cp -r skeletons/STD-Sistem-Terdistribusi proposal-saya
+Cara manual — salin skeleton sesuai bidang:
+
+```bash
+cp -r skeletons/KC-Kecerdasan-Komputasi proposal-saya; cd proposal-saya
+
+# Bidang lain:
+# cp -r skeletons/KBA-Komputasi-Bahasa-Alami proposal-saya
+# cp -r skeletons/TPL-Teknologi-Perangkat-Lunak proposal-saya
+# cp -r skeletons/STD-Sistem-Terdistribusi proposal-saya
 ```
 
 ### 3. Edit Metadata dan Konten Naskah
