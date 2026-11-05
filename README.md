@@ -128,3 +128,26 @@ Lihat `agent/README.md` dan `.agents/skills/proposal-generator/SKILL.md`. Skill 
 Dikembangkan sebagai proyek sumber terbuka untuk mendukung kegiatan akademik mahasiswa dan dosen di Fakultas Teknik Universitas Trunojoyo Madura.
 
 Didistribusikan di bawah lisensi [MIT](LICENSE).
+
+---
+
+## Cara Pakai sebagai Skill (Claude.ai / Agent Harness)
+
+Framework ini juga tersedia sebagai skill standalone `proposal-generator` yang bisa dipasang di harness mana pun:
+
+| Harness | Cara pasang |
+|---|---|
+| **Claude.ai** | Settings → Skills → upload `dist/proposal-generator-skill.zip` (berisi `SKILL.md` di akar zip) |
+| **Codex CLI** | `git clone` repo ini (skill di `.agents/skills/proposal-generator/`), atau salin `dist/proposal-generator-skill/` ke `~/.agents/skills/proposal-generator/` |
+| **OpenCode/Cursor/Orca** | Salin `dist/proposal-generator-skill/` ke direktori skills harness masing-masing (biasanya `~/.agents/skills/` atau `.agents/skills/`) |
+
+Detail bundle:
+
+- `dist/proposal-generator-skill/SKILL.md` — SOP skill standalone (trigger: *proposal skripsi*, *seminar proposal*, *generate proposal*, *scaffold dari topik*)
+- `dist/proposal-generator-skill/scripts/` — `new_proposal.py`, `build_proposal.py`, `check_proposal.py`
+- `dist/proposal-generator-skill/templates/agent_AGENTS.md` — template `AGENTS.md` repo-level
+- `dist/proposal-generator-skill/references/evidence.md` — bukti verifikasi engine & audit
+
+Prasyarat (Linux): `sudo apt install pandoc libreoffice poppler-utils imagemagick python3-yaml` (Windows: WSL2 direkomendasikan).
+
+Setelah skill terpasang, cukup bilang ke agent: *"buatkan proposal dari topik X"* — agent akan menjalankan pipeline lengkap (scaffold → isi bab → anti-slop → kompilasi → audit) sampai lulus.
