@@ -95,6 +95,26 @@ python3 ../scripts/check_proposal.py . --docx output/Proposal_Skripsi.docx
 
 ---
 
+---
+
+## Cara Pakai via Agent (tanpa mulai dari nol)
+
+Mahasiswa cukup memasukkan satu topik bebas — agent mengisi sisanya sampai lulus audit ceklist:
+
+```bash
+python3 scripts/new_proposal.py "Sistem Informasi Peminjaman Laboratorium Berbasis Web" --nama "Nama Mahasiswa" --nim "210411100099"
+cd sistem-informasi-peminjaman-laboratorium-berbasis-web
+# serahkan folder ini ke agent apa pun (Codex, OpenCode, Orca, Cursor, ChatGPT Work);
+# SOP-nya: agent/AGENT_PROMPT.md  ->  isi metadata.yml, chapters/, references.bib
+python3 ../scripts/build_proposal.py .
+```
+
+Lihat `agent/README.md` dan `.agents/skills/proposal-generator/SKILL.md`. Skill gaya tulisan bawaan: `humanizer` (dari repo GitHub [blader/humanizer](https://github.com/blader/humanizer), MIT) dan `stop-slop` oleh Hardik Pandya (MIT).
+
+## Dokumentasi
+
+- [Panduan Lengkap](docs/PANDUAN_LENGKAP.md) — seluruh cara pakai (agent/manual, Linux/Windows/WSL2), arsitektur, troubleshooting
+
 ## Dokumentasi Tambahan
 
 - [Panduan Lengkap Penggunaan](docs/PANDUAN_PENGGUNAAN.md)

@@ -1,5 +1,8 @@
 # Panduan Penggunaan Proposal Generator FT UTM
 
+> Untuk panduan lengkap lintas OS (Linux/Windows/WSL2), cara pakai via agent, arsitektur, dan troubleshooting, lihat [PANDUAN_LENGKAP.md](PANDUAN_LENGKAP.md).
+
+
 Framework ini dirancang untuk memudahkan mahasiswa dan dosen pembimbing dalam menyusun proposal skripsi berstandar resmi **Fakultas Teknik Universitas Trunojoyo Madura (FT UTM)**, mematuhi seluruh butir pada **Daftar Cek Seminar Proposal TIF v06** dan **Buku Panduan Penulisan Skripsi Bab VII**.
 
 ---
@@ -117,3 +120,18 @@ Untuk memeriksa apakah dokumen Anda sudah memenuhi seluruh ketentuan ceklist seb
 python3 ../scripts/check_proposal.py . --docx output/Proposal_Skripsi.docx
 ```
 Laporan lengkap akan ditampilkan di terminal dan disimpan dalam berkas `LAPORAN_PEMERIKSAAN_CEKLIST.md`.
+
+---
+
+## 5. Cara Pakai via Agent (Codex / Opencode / Orca / Cursor / ChatGPT Work)
+
+Mahasiswa lain tidak perlu belajar struktur skeleton. Cukup scaffold dari satu topik bebas, lalu serahkan folder proyek ke agent apa pun:
+
+```bash
+python3 scripts/new_proposal.py "<topik bebas>" --nama "<Nama>" --nim "<NIM>"
+cd <folder-proyek>
+# agent membaca topik.yml + ../agent/AGENT_PROMPT.md dan mengisi bab sampai audit lulus
+python3 ../scripts/build_proposal.py .
+```
+
+SOP agent: lihat `agent/AGENT_PROMPT.md`. Skill untuk harness yang mendukung skill: `.agents/skills/proposal-generator/SKILL.md`.
