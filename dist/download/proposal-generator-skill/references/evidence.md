@@ -3,9 +3,11 @@
 ## Test engine
 | Uji | Hasil |
 |---|---|
-| `new_proposal.py --dry-run "Sistem Informasi Peminjaman Laboratorium Berbasis Web"` | Opsi A (heuristic: skor A=2 >= B=0) |
-| `new_proposal.py --dry-run "Klasifikasi Citra Penyakit Daun Kopi dengan CNN"` | Opsi B (skor B=4 > A=0) |
-| `new_proposal.py --dry-run --opsi A "Klasifikasi Citra..."` | Opsi A (manual) |
+| `new_proposal.py --dry-run "Sistem Informasi Peminjaman Laboratorium Berbasis Web"` | TPL — Teknologi Perangkat Lunak (skor TPL=3) |
+| `new_proposal.py --dry-run "Klasifikasi Citra Penyakit Daun Kopi dengan CNN"` | KC — Kecerdasan Komputasional (skor KC=4) |
+| `new_proposal.py --dry-run "Sistem Penilaian Esai ... IndoBERT"` | KBA — Komputasi Bahasa Alami (skor KBA=3) |
+| `new_proposal.py --dry-run "Sistem Terdistribusi ... Load Balancing"` | STD — Sistem Terdistribusi (skor STD=3) |
+| `new_proposal.py --dry-run --opsi std "Klasifikasi..."` | STD (manual, lowercase diterima) |
 | Scaffold riil `/tmp/pg-e2e` "Klasifikasi Citra Penyakit Daun Kopi dengan CNN" | OK, `topik.yml` terbuat |
 | `check_proposal.py examples/demo-proposal` | SUKSES (seluruh butir otomatis LULUS) |
 | `build_proposal.py examples/demo-proposal` | OK → `output/Proposal_Skripsi.docx`, audit akhir SUKSES |

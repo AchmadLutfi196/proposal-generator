@@ -1,0 +1,32 @@
+title: "KLASIFIKASI PENYAKIT DAUN KOPI BERBASIS CITRA DENGAN ARSITEKTUR CNN"
+author_name: "ACHMAD MAHASISWA"
+author_nim: "210411100099"
+advisor_1_name: "Dr. Dosen Pembimbing Pertama, M.Kom."
+advisor_1_nip: "198001012005011001"
+advisor_2_name: "Dosen Pembimbing Kedua, S.Kom., M.T."
+advisor_2_nip: "198502022010012002"
+study_program: "PROGRAM STUDI TEKNIK INFORMATIKA"
+department: "JURUSAN TEKNIK INFORMATIKA"
+faculty: "FAKULTAS TEKNIK"
+institution: "UNIVERSITAS TRUNOJOYO MADURA"
+city: "BANGKALAN"
+year: "2026"
+bidang_minat: "KECERDASAN KOMPUTASIONAL"
+
+abstract_id: |
+  Klasifikasi penyakit daun kopi secara manual memerlukan keahlian visual yang tinggi dan cenderung lambat pada kebun berskala luas. Penelitian ini bertujuan mengembangkan model Convolutional Neural Network untuk mengklasifikasikan citra daun kopi menjadi sehat dan terserang karat daun. Model menggunakan transfer learning dari arsitektur MobileNetV2 yang dilatih pada dataset citra daun kopi berlabel. Evaluasi performa dilakukan menggunakan confusion matrix, akurasi, presisi, recall, dan F1-score. Pengujian fungsionalitas sistem dilakukan melalui black box testing. Luaran penelitian berupa model klasifikasi citra penyakit tanaman beserta dokumentasi performa model.
+
+keywords_id:
+  - Klasifikasi Citra
+  - Convolutional Neural Network
+  - MobileNetV2
+  - Deteksi Penyakit Tanaman
+
+abstract_en: |
+  Manual identification of coffee leaf disease requires specialized visual expertise and is slow on large plantations. This research aims to develop a Convolutional Neural Network model to classify coffee leaf images as healthy or leaf rust infected. The model applies transfer learning from the MobileNetV2 architecture trained on a labeled coffee leaf image dataset. Model performance is evaluated using a confusion matrix, accuracy, precision, recall, and F1-score. System functionality is verified through black box testing. Expected outcomes comprise a plant disease image classification model with documented performance benchmarks.
+
+keywords_en:
+  - Image Classification
+  - Convolutional Neural Network
+  - MobileNetV2
+  - Plant Disease Detection

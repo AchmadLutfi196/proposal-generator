@@ -1,0 +1,32 @@
+title: "RANCANG BANGUN SISTEM TERDISTRIBUSI PENYEIMBANG BEBAN API BERBASIS ROUND ROBIN"
+author_name: "ACHMAD MAHASISWA"
+author_nim: "210411100099"
+advisor_1_name: "Dr. Dosen Pembimbing Pertama, M.Kom."
+advisor_1_nip: "198001012005011001"
+advisor_2_name: "Dosen Pembimbing Kedua, S.Kom., M.T."
+advisor_2_nip: "198502022010012002"
+study_program: "PROGRAM STUDI TEKNIK INFORMATIKA"
+department: "JURUSAN TEKNIK INFORMATIKA"
+faculty: "FAKULTAS TEKNIK"
+institution: "UNIVERSITAS TRUNOJOYO MADURA"
+city: "BANGKALAN"
+year: "2026"
+bidang_minat: "SISTEM TERDISTRIBUSI"
+
+abstract_id: |
+  Layanan API kampus yang dijalankan pada satu server tunggal menjadi titik kegagalan tunggal dan mudah kewalahan saat beban permintaan meningkat. Penelitian ini bertujuan merancang dan membangun sistem terdistribusi dengan penyeimbang beban Round Robin untuk mendistribusikan permintaan API ke beberapa node server. Arsitektur sistem menerapkan replikasi layanan, health check berkala, dan mekanisme failover otomatis saat satu node tidak sehat. Evaluasi performa dilakukan dengan mengukur throughput, waktu respons rata-rata, dan ketersediaan layanan pada skenario beban bertingkat. Pengujian fungsionalitas dilakukan melalui black box testing dan pengujian skenario kegagalan node. Luaran penelitian berupa arsitektur sistem terdistribusi yang lebih andal dan skalabel beserta dokumentasi hasil evaluasi performa.
+
+keywords_id:
+  - Sistem Terdistribusi
+  - Load Balancing
+  - Round Robin
+  - Failover
+
+abstract_en: |
+  Campus API services running on a single server create a single point of failure and degrade under rising request loads. This research aims to design and build a distributed system with Round Robin load balancing to distribute API requests across multiple server nodes. The architecture applies service replication, periodic health checking, and automatic failover when a node becomes unhealthy. Performance evaluation measures throughput, average response time, and service availability under increasing load scenarios. Functional verification combines black box testing with node-failure scenario testing. Expected outcomes comprise a more reliable and scalable distributed system architecture with documented performance evaluation results.
+
+keywords_en:
+  - Distributed Systems
+  - Load Balancing
+  - Round Robin
+  - Failover

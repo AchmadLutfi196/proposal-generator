@@ -37,10 +37,10 @@ Windows: WSL2 direkomendasikan; Windows native pakai `py -3` dan pastikan `C:\Pr
 python3 scripts/new_proposal.py "<topik bebas>" \
   --nama "<Nama Lengkap>" --nim "<NIM>" \
   [--dosen1 "<Pemb I, Gelar>"] [--dosen2 "<Pemb II, Gelar>"] \
-  [--opsi A|B] [--dry-run]
+  [--opsi KC|KBA|TPL|STD] [--dry-run]
 ```
 
-Heuristik: sistem/web/aplikasi/iot/manajemen → **A (TPL: waterfall/UML/black box)**; AI/CNN/NLP/klasifikasi/citra/deteksi → **B (Kecerdasan Komputasi: pipeline ML/metrik)**; tak ada keyword → default B. Scaffold menghasilkan folder proyek berisi `topik.yml` (topik+identitas+alasan opsi), `PETUNJUK_AGENT.md`, `metadata.yml`, `chapters/`, `references.bib`.
+Heuristik 4 bidang resmi TIF v06: sistem/web/aplikasi → **TPL**; AI/CNN/klasifikasi/citra → **KC**; NLP/IndoBERT/teks → **KBA**; load balancing/microservice/replikasi → **STD**; tak ada keyword → default KC. Scaffold menghasilkan folder proyek berisi `topik.yml` (topik+identitas+alasan opsi), `PETUNJUK_AGENT.md`, `metadata.yml`, `chapters/`, `references.bib`, `topik.yml` (bidang_minat: salah satu dari 4 bidang resmi).
 
 ### Langkah 2 — Produkkan konten dari `topik.yml`
 
@@ -69,7 +69,7 @@ Perbaiki setiap `FAIL` otomatis sampai bersih; butir `manual` ADM-* biarkan. **T
 
 ### Langkah 5 — Serahkan
 
-Laporkan path `.docx`, hasil audit, judul final, opsi terpilih, daftar referensi yang dipakai.
+Laporkan path `.docx`, hasil audit, judul final, bidang minat terpilih (KC/KBA/TPL/STD), daftar referensi yang dipakai.
 
 ## 3. Larangan keras
 

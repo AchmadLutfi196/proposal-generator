@@ -7,7 +7,7 @@ Skill standalone berbasis `SKILL.md` untuk membuat proposal skripsi FT UTM (Cekl
 | Berkas | Fungsi |
 |---|---|
 | `SKILL.md` | SOP skill (alat yang dibaca agent; frasa trigger: proposal skripsi, seminar proposal, generate proposal, scaffold dari topik) |
-| `scripts/new_proposal.py` | CLI scaffold: topik bebas → folder proyek + `topik.yml` + `PETUNJUK_AGENT.md`, pilih Opsi A/B otomatis |
+| `scripts/new_proposal.py` | CLI scaffold: topik bebas → folder proyek + `topik.yml` + `PETUNJUK_AGENT.md`, pilih bidang KC/KBA/TPL/STD otomatis (4 bidang minat resmi TIF v06) |
 | `scripts/build_proposal.py` | Pipeline kompilasi (Pandoc → finalisasi seksi → sinkron TOC → audit) |
 | `scripts/check_proposal.py` | Auditor ceklist v06 → `LAPORAN_PEMERIKSAAN_CEKLIST.md` |
 | `templates/agent_AGENTS.md` | Template `AGENTS.md` repo-level (simpan sebagai `AGENTS.md` repo tujuan) |

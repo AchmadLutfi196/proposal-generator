@@ -6,7 +6,7 @@ Framework otomasi proposal skripsi FT UTM (TIF v06): naskah Markdown → DOCX/PD
 ## Struktur
 - `scripts/` — engine: `build_proposal.py` (pipeline), `check_proposal.py` (auditor), `new_proposal.py` (scaffold dari topik bebas), `finalize_docx.py`, `docx_pagenum.py`, `make_reference_docx.py`, `render_figures.py`
 - `agent/AGENT_PROMPT.md` — SOP agent penulis proposal (kontrak portable lintas harness)
-- `skeletons/Opsi-A-TPL|Opsi-B-Kecerdasan-Komputasi/` — starter kit per bidang
+- `skeletons/KC-Kecerdasan-Komputasi|KBA-Komputasi-Bahasa-Alami|TPL-Teknologi-Perangkat-Lunak|STD-Sistem-Terdistribusi/` — starter kit per 4 bidang minat resmi TIF v06
 - `templates/`, `presets/utm-proposal.yml`, `checklists/ft-utm-tif-v06.yml` — otoritas format (baca filenya, jangan hafal)
 - `examples/demo-proposal/` — contoh yang sudah lulus audit
 

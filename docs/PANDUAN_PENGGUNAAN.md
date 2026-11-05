@@ -34,8 +34,10 @@ proposal-generator/
 │   ├── utm-proposal.yml         # Preset resmi FT UTM (margin 4-3-3-3 cm, TNR 12pt, spasi 1.5)
 │   └── standard.yml             # Preset umum proposal akademik
 ├── skeletons/
-│   ├── Opsi-A-TPL/              # Kerangka Rekayasa Perangkat Lunak (Waterfall/Prototype, UML)
-│   └── Opsi-B-Kecerdasan-Komputasi/ # Kerangka AI / Data Science (CRISP-DM / Pipeline)
+│   ├── KC-Kecerdasan-Komputasi/ # Kerangka Kecerdasan Komputasional (CNN/ML/metrik)
+│   ├── KBA-Komputasi-Bahasa-Alami/ # Kerangka Komputasi Bahasa Alami (NLP/IndoBERT)
+│   ├── TPL-Teknologi-Perangkat-Lunak/ # Kerangka Rekayasa Perangkat Lunak (Waterfall/UML)
+│   └── STD-Sistem-Terdistribusi/  # Kerangka Sistem Terdistribusi (load balancing/failover)
 ├── templates/
 │   ├── reference.docx           # Dokumen referensi OpenXML dengan style resmi
 │   ├── docx.lua                 # Filter Pandoc penata bab, cover V-shape, & TOC
@@ -58,12 +60,14 @@ proposal-generator/
 
 ### Langkah 1: Gandakan Kerangka Pilihan Anda
 Pilih kerangka yang sesuai dengan bidang minat Anda:
-- **Opsi A:** Untuk bidang Rekayasa Perangkat Lunak / Web / Mobile / IoT.
-- **Opsi B:** Untuk bidang Kecerdasan Komputasi / NLP / Computer Vision / Data Mining.
+- **KC (Kecerdasan Komputasional):** AI / Computer Vision / Data Science / prediksi.
+- **KBA (Komputasi Bahasa Alami):** NLP / teks / bahasa.
+- **TPL (Teknologi Perangkat Lunak):** Rekayasa Perangkat Lunak / Web / Mobile / IoT.
+- **STD (Sistem Terdistribusi):** Load balancing / microservice / replikasi / failover.
 
 Contoh membuat proyek baru:
 ```bash
-cp -r skeletons/Opsi-B-Kecerdasan-Komputasi proyek-proposal-saya
+cp -r skeletons/KC-Kecerdasan-Komputasi proyek-proposal-saya   # KBA/TPL/STD untuk bidang lain
 cd proyek-proposal-saya
 ```
 

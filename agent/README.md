@@ -10,7 +10,7 @@ Folder ini adalah **kontrak portable** agar mahasiswa lain cukup memasukkan topi
 ## Alur cepat
 
 ```bash
-# 1. Scaffold dari topik bebas (pilih opsi A/B otomatis, bisa override --opsi)
+# 1. Scaffold dari topik bebas (pilih bidang KC/KBA/TPL/STD otomatis, bisa override --opsi)
 python3 scripts/new_proposal.py "Sistem Informasi Peminjaman Laboratorium Berbasis Web" \
   --nama "Nama Mahasiswa" --nim "210411100099"
 

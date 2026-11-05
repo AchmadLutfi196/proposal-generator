@@ -1,0 +1,32 @@
+title: "PERANCANGAN SISTEM INFORMASI PEMINJAMAN ALAT LABORATORIUM BERBASIS WEB"
+author_name: "ACHMAD MAHASISWA"
+author_nim: "210411100099"
+advisor_1_name: "Dr. Dosen Pembimbing Pertama, M.Kom."
+advisor_1_nip: "198001012005011001"
+advisor_2_name: "Dosen Pembimbing Kedua, S.Kom., M.T."
+advisor_2_nip: "198502022010012002"
+study_program: "PROGRAM STUDI TEKNIK INFORMATIKA"
+department: "JURUSAN TEKNIK INFORMATIKA"
+faculty: "FAKULTAS TEKNIK"
+institution: "UNIVERSITAS TRUNOJOYO MADURA"
+city: "BANGKALAN"
+year: "2026"
+bidang_minat: "TEKNOLOGI PERANGKAT LUNAK"
+
+abstract_id: |
+  Pengelolaan peminjaman alat laboratorium di program studi masih dilakukan secara manual sehingga rawan kehilangan data, duplikasi jadwal peminjaman, dan sulitnya pelacakan status alat. Penelitian ini bertujuan merancang dan membangun sistem informasi peminjaman alat laboratorium berbasis web dengan model pengembangan Waterfall. Pemodelan sistem menggunakan diagram Unified Modeling Language meliputi use case, activity, dan class diagram. Kebutuhan fungsional sistem mencakup manajemen inventaris, peminjaman, pengembalian, dan laporan pemakaian. Pengujian fungsionalitas dilakukan menggunakan black box testing pada seluruh modul wajib sistem. Luaran penelitian berupa aplikasi web peminjaman alat laboratorium beserta dokumen perancangan dan laporan pengujian.
+
+keywords_id:
+  - Sistem Informasi
+  - Rekayasa Perangkat Lunak
+  - Waterfall
+  - Black Box Testing
+
+abstract_en: |
+  Laboratory equipment lending in the study program is still managed manually, causing data loss, booking conflicts, and poor traceability of equipment status. This research aims to design and build a web-based laboratory equipment lending information system using the Waterfall development model. System modeling applies Unified Modeling Language diagrams including use case, activity, and class diagrams. Functional requirements cover inventory management, lending, returns, and usage reporting. Functionality verification is conducted through black box testing across all mandatory system modules. Expected outcomes comprise a web-based laboratory equipment lending application with design documentation and a testing report.
+
+keywords_en:
+  - Information System
+  - Software Engineering
+  - Waterfall
+  - Black Box Testing

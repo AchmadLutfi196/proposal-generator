@@ -1,4 +1,3 @@
----
 title: "PENGEMBANGAN SISTEM PENILAIAN ESAI MULTI-RATER OTOMATIS MENGGUNAKAN INDOBERT PADA UJIAN SEKOLAH"
 author_name: "ACHMAD MAHASISWA"
 author_nim: "210411100099"
@@ -12,6 +11,7 @@ faculty: "FAKULTAS TEKNIK"
 institution: "UNIVERSITAS TRUNOJOYO MADURA"
 city: "BANGKALAN"
 year: "2026"
+bidang_minat: "KOMPUTASI BAHASA ALAMI"
 
 abstract_id: |
   Penilaian esai secara manual oleh pengajar sering menghadapi kendala subjektivitas, variabilitas antar-penilai, dan keterbatasan waktu pemeriksaan pada volume jawaban yang besar. Penelitian ini bertujuan mengembangkan sistem penilaian esai otomatis menggunakan model IndoBERT dengan arsitektur multi-rater untuk menghasilkan rekomendasi skor yang objektif dan transparan. Model ekstraksi representasi semantik memanfaatkan pretrained indobenchmark/indobert-base-p2 yang dikombinasikan dengan teknik mean pooling dan penghitungan kemiripan semantik cosine similarity antara jawaban siswa dan kunci jawaban acuan. Sistem mengintegrasikan pencatatan multi-penilai untuk menjaga akuntabilitas penilaian guru. Evaluasi model dilakukan menggunakan metrik Quadratic Weighted Kappa, Root Mean Square Error, dan Mean Absolute Error terhadap skor acuan pengajar. Pengujian fungsionalitas sistem informasi dilakukan melalui black box testing pada modul manajemen penugasan, pembobotan, dan rekapitulasi penilaian. Luaran penelitian berupa platform perangkat lunak pendukung asesmen pendidikan beserta dokumentasi performa akurasi sistem penilaian esai otomatis.
@@ -30,4 +30,3 @@ keywords_en:
   - IndoBERT
   - Multi-Rater
   - Cosine Similarity
-...

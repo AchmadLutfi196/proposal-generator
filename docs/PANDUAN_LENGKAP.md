@@ -28,12 +28,14 @@ Framework ini menulis **konten proposal dalam Markdown murni** di folder proyek,
 - **Sitasi APA numerik**: `[@citekey]` di naskah → `[1]`, `[2–4]` urut kemunculan, Daftar Pustaka otomatis via `apa-numeric.csl`.
 - **Audit otomatis**: `check_proposal.py` menilai naskah + DOCX berdasarkan `checklists/ft-utm-tif-v06.yml` dan menghasilkan `LAPORAN_PEMERIKSAAN_CEKLIST.md`.
 
-Dua skeleton siap pakai:
+Empat skeleton siap pakai (4 Bidang Minat resmi dropdown Ceklist TIF v06):
 
-| Opsi | Bidang | Ciri khas |
+| Kode | Bidang | Ciri khas |
 |---|---|---|
-| **A (TPL)** | Rekayasa Perangkat Lunak: sistem/web/mobile/IoT/manajemen | Waterfall/prototype, analisis kebutuhan fungsional, diagram UML, black box testing |
-| **B (Kecerdasan Komputasi)** | AI/NLP/CV/data mining | Pipeline ML, pemodelan data, evaluasi QWK/RMSE/MAE/akurasi |
+| **KC** | Kecerdasan Komputasional: AI/CV/data mining/prediksi | Pipeline ML/CNN, pemodelan data, evaluasi akurasi/presisi/recall/F1 |
+| **KBA** | Komputasi Bahasa Alami: NLP/teks/bahasa | IndoBERT/LLM, ekstraksi semantik, evaluasi QWK/RMSE/MAE |
+| **TPL** | Teknologi Perangkat Lunak: sistem/web/mobile/IoT/manajemen | Waterfall/prototype, analisis kebutuhan fungsional, diagram UML, black box testing |
+| **STD** | Sistem Terdistribusi: load balancing/microservice/failover | Arsitektur terdistribusi, throughput, latensi, ketersediaan |
 
 ---
 
@@ -42,7 +44,7 @@ Dua skeleton siap pakai:
 ```
 topik bebas
     │
-    ▼  scripts/new_proposal.py (scaffold + heuristik opsi A/B)
+    ▼  scripts/new_proposal.py (scaffold + heuristik bidang KC/KBA/TPL/STD)
 folder proyek (metadata.yml, chapters/*.md, references.bib, topik.yml)
     │  ◄── agent/manual mengisi KONTEN di sini
     ▼  scripts/build_proposal.py (pipeline 4 tahap)
@@ -115,7 +117,7 @@ py -3 ..\scripts\build_proposal.py .
 Mahasiswa cukup memasukkan satu topik bebas. Kontrak portable `agent/AGENT_PROMPT.md` + `.agents/skills/proposal-generator/SKILL.md` dibaca oleh agent apa pun di harness-nya masing-masing.
 
 ```bash
-# 1) Clone + scaffold dari topik bebas (opsi A/B dipilih otomatis; override dengan --opsi)
+# 1) Clone + scaffold dari topik bebas (bidang KC/KBA/TPL/STD dipilih otomatis; override dengan --opsi)
 python3 scripts/new_proposal.py "Sistem Informasi Peminjaman Laboratorium Berbasis Web" \
   --nama "Nama Mahasiswa" --nim "210411100099"
 # LIHAT dulu tanpa menulis: tambahkan --dry-run
@@ -131,7 +133,7 @@ python3 ../scripts/check_proposal.py . --docx output/Proposal_Skripsi.docx
 
 ### Apa yang dilakukan `new_proposal.py`
 
-- Heuristik keyword: topik "sistem/web/aplikasi/iot" → Opsi A; "AI/CNN/NLP/klasifikasi/citra/deteksi" → Opsi B; tanpa keyword → default B (bisa override `--opsi A`).
+- Heuristik keyword (4 bidang resmi TIF v06): "sistem/web/aplikasi/iot" → TPL; "AI/CNN/klasifikasi/citra" → KC; "NLP/IndoBERT/teks/esai" → KBA; "load balancing/microservice/replikasi" → STD; tanpa keyword → default KC (bisa override `--opsi TPL|KBA|STD`).
 - Menyalo skeleton pilihan ke folder proyek, membuat `topik.yml` (topik + identitas + alasan opsi), `PETUNJUK_AGENT.md`, dan mengisi `metadata.yml` dari `--nama/--nim/--dosen1/--dosen2/--tahun`.
 
 ### Pipeline agent (`agent/AGENT_PROMPT.md`, ringkas)
@@ -162,7 +164,7 @@ git clone https://github.com/AchmadLutfi196/proposal-generator.git
 cd proposal-generator
 
 # 1) Gandakan skeleton
-cp -r skeletons/Opsi-B-Kecerdasan-Komputasi proposal-saya   # atau Opsi-A-TPL
+cp -r skeletons/KC-Kecerdasan-Komputasi proposal-saya   # KBA-Komputasi-Bahasa-Alami / TPL-Teknologi-Perangkat-Lunak / STD-Sistem-Terdistribusi untuk bidang lain
 cd proposal-saya
 
 # 2) Edit metadata.yml (judul 8–12 kata kapital, nama, NIM, pembimbing, abstrak, kata kunci)
@@ -202,8 +204,10 @@ proposal-generator/
 │   ├── make_reference_docx.py       # generator reference.docx berstandar
 │   └── render_figures.py            # diagram ISO 5807 → SVG/PNG
 ├── skeletons/
-│   ├── Opsi-A-TPL/                  # sistem/web/mobile/IoT (waterfall/UML/black box)
-│   └── Opsi-B-Kecerdasan-Komputasi/ # AI/NLP/CV/data (pipeline ML/metrik)
+│   ├── KC-Kecerdasan-Komputasi/       # Kecerdasan Komputasional (CNN/ML/metrik)
+│   ├── KBA-Komputasi-Bahasa-Alami/  # Komputasi Bahasa Alami (NLP/IndoBERT)
+│   ├── TPL-Teknologi-Perangkat-Lunak/ # Teknologi Perangkat Lunak (waterfall/UML/black box)
+│   └── STD-Sistem-Terdistribusi/     # Sistem Terdistribusi (load balancing/failover)
 ├── templates/                       # apa-numeric.csl, docx.lua, reference.docx, logo
 ├── presets/                         # utm-proposal.yml (resmi), standard.yml (umum)
 ├── checklists/                      # ft-utm-tif-v06.yml (definisi rule audit)
@@ -219,7 +223,7 @@ proposal-generator/
 
 | Perintah | Fungsi |
 |---|---|
-| `python3 scripts/new_proposal.py "<topik>" [--nama ...] [--nim ...] [--opsi A\|B] [--dry-run]` | Scaffold proyek baru |
+| `python3 scripts/new_proposal.py "<topik>" [--nama ...] [--nim ...] [--opsi KC|KBA|TPL|STD] [--dry-run]` | Scaffold proyek baru |
 | `python3 scripts/build_proposal.py .` (dari folder proyek) | Kompilasi → `output/Proposal_Skripsi.docx` + audit |
 | `python3 scripts/check_proposal.py . --docx output/Proposal_Skripsi.docx` | Audit saja → `LAPORAN_PEMERIKSAAN_CEKLIST.md` |
 | `python3 scripts/render_figures.py` | Diagram ISO 5807 |

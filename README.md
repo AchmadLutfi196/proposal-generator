@@ -28,9 +28,11 @@ Menulis naskah akademik di Microsoft Word secara manual sering kali menimbulkan 
 - **Daftar Isi Dinamis dengan Nomor Halaman Riil:** Nomor halaman di Daftar Isi disinkronkan langsung dari hasil render fisik PDF, sehingga akurat tanpa perlu pembaruan manual (*update field*).
 - **Format Sampul Resmi (V-Shape):** Pemecahan baris judul proposal secara proporsional membentuk piramida terbalik (huruf V) lengkap dengan lambang UTM pentagon 4 cm, identitas mahasiswa, dan dosen pembimbing.
 - **Sitasi Otomatis Bergaya APA Numerik:** Sitasi naskah diformat menggunakan angka kurung siku urut kemunculan (`[1]`, `[2–4]`) dan terhubung otomatis dengan bibliografi APA 7th Edition di Daftar Pustaka.
-- **Dua Pilihan Kerangka Naskah:** Tersedia starter kit siap pakai untuk:
-  - **Opsi A (TPL):** Rekayasa Perangkat Lunak (Waterfall/Prototype, analisis kebutuhan fungsional, diagram UML, dan black box testing).
-  - **Opsi B (Kecerdasan Komputasional):** Artificial Intelligence / NLP / Data Science (alur penelitian ISO 5807, pemodelan data, evaluasi QWK/RMSE/MAE).
+- **Empat Pilihan Kerangka Naskah (4 Bidang Minat resmi TIF v06):** Tersedia starter kit siap pakai untuk:
+  - **KC — Kecerdasan Komputasional:** Artificial Intelligence / Computer Vision / Data Science (CNN, pemodelan data, evaluasi akurasi/presisi/recall/F1).
+  - **KBA — Komputasi Bahasa Alami:** NLP / teks / bahasa (IndoBERT, ekstraksi semantik, evaluasi QWK/RMSE/MAE).
+  - **TPL — Teknologi Perangkat Lunak:** Rekayasa Perangkat Lunak (Waterfall/Prototype, analisis kebutuhan fungsional, diagram UML, black box testing).
+  - **STD — Sistem Terdistribusi:** Load balancing / microservice / replikasi / failover (throughput, latensi, ketersediaan).
 - **Generator Diagram ISO 5807:** Pembuatan bagan alir penelitian dan perancangan sistem beresolusi tinggi (200–300 DPI) bebas blur.
 - **Auditor Ceklist Otomatis:** Perintah mandiri untuk memeriksa dokumen dan menghasilkan laporan kepatuhan `LAPORAN_PEMERIKSAAN_CEKLIST.md`.
 
@@ -65,13 +67,13 @@ cd proposal-generator
 Pilih salah satu kerangka yang sesuai dengan topik Anda:
 
 ```bash
-# Untuk topik AI / Data Science (Opsi B):
-cp -r skeletons/Opsi-B-Kecerdasan-Komputasi proposal-saya
+# Untuk topik AI / citra (KC):
+cp -r skeletons/KC-Kecerdasan-Komputasi proposal-saya
 cd proposal-saya
 
-# Atau untuk topik Rekayasa Perangkat Lunak (Opsi A):
-# cp -r skeletons/Opsi-A-TPL proposal-saya
-# cd proposal-saya
+# Untuk topik NLP (KBA):  cp -r skeletons/KBA-Komputasi-Bahasa-Alami proposal-saya
+# Untuk topik SI / web (TPL):  cp -r skeletons/TPL-Teknologi-Perangkat-Lunak proposal-saya
+# Untuk topik sistem terdistribusi (STD):  cp -r skeletons/STD-Sistem-Terdistribusi proposal-saya
 ```
 
 ### 3. Edit Metadata dan Konten Naskah

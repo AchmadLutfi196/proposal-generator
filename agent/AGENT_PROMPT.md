@@ -33,8 +33,10 @@ cat metadata.yml       # template metadata (sudah terisi sebagian oleh new_propo
 Jika `topik` masih generik ("mau buat apa"), turunkan dari sana: domain (SI vs AI), masalah, metode usulan, dataset/sumber data, metrik evaluasi.
 
 ### Langkah 2 — Pilih/konfirmasi skeleton
-- **Opsi A (TPL):** topik = sistem/web/mobile/IoT/database/manajemen → waterfall/prototype, UML, black box testing.
-- **Opsi B (Kecerdasan Komputasi):** topik = AI/NLP/CV/data mining → pipeline ML, pemodelan data, evaluasi QWK/RMSE/MAE/akurasi.
+- **KC — Kecerdasan Komputasional:** topik = AI/CV/data mining/prediksi → pipeline ML, pemodelan data, evaluasi akurasi/presisi/recall/F1 (CNN/YOLO/MobileNet dsb.).
+- **KBA — Komputasi Bahasa Alami:** topik = NLP/teks/bahasa → IndoBERT/LLM, ekstraksi semantik, evaluasi QWK/RMSE/MAE.
+- **TPL — Teknologi Perangkat Lunak:** topik = sistem/web/mobile/IoT/database/manajemen → waterfall/prototype, UML, black box testing.
+- **STD — Sistem Terdistribusi:** topik = load balancing/microservice/replikasi/failover → arsitektur terdistribusi, throughput/latensi/ketersediaan.
 - `new_proposal.py` sudah memilih otomatis; ubah hanya jika jelas salah.
 
 ### Langkah 3 — Susun judul final
@@ -49,7 +51,7 @@ Jika `topik` masih generik ("mau buat apa"), turunkan dari sana: domain (SI vs A
 ### Langkah 5 — Tulis bab (`chapters/`)
 - `01-pendahuluan.md`: Latar Belakang (≥1000 kata, global→lokal→gap→kontribusi), Rumusan Masalah (1.2.1 Permasalahan, 1.2.2 Metode Usulan, 1.2.3 Pertanyaan Penelitian), Tujuan, Manfaat (teoritis+praktis), Batasan Masalah, Sistematika Penulisan, Jadwal Penelitian (tabel).
 - `02-tinjauan-pustaka.md`: teori dasar sesuai metode + minimal 5 penelitian terdahulu dalam tabel komparasi + ringkasan celah riset.
-- `03-metodologi.md`: alur penelitian/diagram (gunakan `gambar/flowchart_penelitian.svg|png` bawaan skeleton; sesuaikan label), teknik perolehan data, metode komputasi/perancangan, skenario pengujian (black box untuk A; metrik + dataset untuk B).
+- `03-metodologi.md`: alur penelitian/diagram (gunakan `gambar/flowchart_penelitian.svg|png` bawaan skeleton; sesuaikan label), teknik perolehan data, metode komputasi/perancangan, skenario pengujian (black box untuk TPL; metrik + dataset untuk KC/KBA; throughput/latensi/failover untuk STD).
 - Gunakan sitasi Pandoc `[@citekey]` di setiap klaim faktual. Jangan tulis `[1]` manual — engine yang menomori.
 
 

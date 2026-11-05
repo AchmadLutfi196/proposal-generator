@@ -12,9 +12,9 @@ User menyebut proposal skripsi / seminar proposal / "buatkan proposal dari topik
 1. Baca `agent/AGENT_PROMPT.md` (Kontrak agent — pipeline wajib, aturan otoritas).
 2. Scaffold proyek baru dari topik bebas:
    ```bash
-   python3 scripts/new_proposal.py "<topik bebas>" [--nama ...] [--nim ...] [--opsi A|B]
+   python3 scripts/new_proposal.py "<topik bebas>" [--nama ...] [--nim ...] [--opsi KC|KBA|TPL|STD]
    ```
-3. Di folder proyek (`topik.yml` + `PETUNJUK_AGENT.md`), isi `metadata.yml`, `chapters/*.md`, `references.bib` mengikuti skeleton Opsi A/B.
+3. Di folder proyek (`topik.yml` + `PETUNJUK_AGENT.md`), isi `metadata.yml`, `chapters/*.md`, `references.bib` mengikuti skeleton bidang minatnya (KC/KBA/TPL/STD — 4 bidang resmi TIF v06).
 4. Loop kompilasi + audit sampai lulus:
    ```bash
    python3 ../scripts/build_proposal.py .
