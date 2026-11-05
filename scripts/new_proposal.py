@@ -49,7 +49,8 @@ KEYWORDS = {
         "yolo", "mobilenet", "resnet", "vgg",
     ],
     "KBA": [
-        "nlp", "bahasa alami", "komputasi bahasa alami", "bert", "indobert",
+        "nlp", "bahasa alami", "komputasi bahasa alami", "bert", "indobert", "xlm-r", "xlm-roberta", "roberta",
+        "essay", "linguistik", "linguistic", "fitur linguistik", "linguistic features",
         "llm", "transformer bahasa", "teks", "sentimen", "sentiment",
         "ekstraksi", "ringkasan teks", "summarization", "parafrase",
         "chatbot", "dialog", "esai", "klaster teks", "topic modeling",
@@ -89,9 +90,13 @@ def normalize_opsi(raw: str) -> str:
 def infer_opsi(topik: str) -> tuple[str, str]:
     t = f" {topik.lower()} "
     skor = {k: sum(1 for kw in v if kw in t) for k, v in KEYWORDS.items()}
-    terbaik = max(skor, key=lambda k: skor[k])
-    if skor[terbaik] > 0:
-        # Biarkan hasil imbang default ke bidang pertama secara deterministik
+    maks = max(skor.values())
+    if maks > 0:
+        # Tie-break: KBA menang atas KC bila skor imbang (teks/esai = penanda kuat NLP)
+        for kandidat in ["KBA", "KC", "TPL", "STD"]:
+            if skor[kandidat] == maks:
+                terbaik = kandidat
+                break
         return terbaik, f"heuristic: skor {skor} -> {terbaik} ({BIDANG_MINAT[terbaik][0]})"
     return "KC", "default KC (Kecerdasan Komputasional) — tidak ada keyword 4 bidang terdeteksi; ganti dengan --opsi TPL|KBA|STD bila perlu"
 
